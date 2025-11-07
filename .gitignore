@@ -1,10 +1,11 @@
-# Hugo source files - keep the blog directory in git
-# But ignore certain build artifacts
+# Hugo generated files - these should not be in git
+# GitHub Pages will build from source using Actions
+public/
+resources/_gen/
+.hugo_build.lock
 
-# Hugo cache
-blog/.hugo_build.lock
-blog/resources/
-blog/.DS_Store
+# Hugo cache and temp files
+*.log
 
 # OS files
 .DS_Store
@@ -16,3 +17,6 @@ Thumbs.db
 *.swp
 *.swo
 *~
+
+# Don't ignore themes (we need them)
+!themes/

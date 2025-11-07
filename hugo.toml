@@ -2,7 +2,7 @@ baseURL = "https://havel29.github.io"
 languageCode = "en-us"
 title = "Havel29"
 theme = "hybrid-portfolio"
-publishDir = "../"
+publishDir = "public"
 
 [markup]
   [markup.goldmark]

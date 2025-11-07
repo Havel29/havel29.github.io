@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Havel29</title>
+    <link>http://localhost:1313/projects/</link>
+    <description>Recent content in Projects on Havel29</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jul 2024 10:00:00 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bachelor&#39;s Thesis: High-Performance Flow Simulation</title>
+      <link>http://localhost:1313/projects/bachelors-thesis-high-performance-flow-simulation/</link>
+      <pubDate>Mon, 01 Jul 2024 10:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/projects/bachelors-thesis-high-performance-flow-simulation/</guid>
+      <description>&lt;h2 id=&#34;bachelors-thesis&#34;&gt;Bachelor&amp;rsquo;s Thesis&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Full Title:&lt;/strong&gt; A High-Performance Semi-Implicit Numerical Method for the Simulation of Compressible Flows in Systems of Compliant Elastic Pipes&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Author:&lt;/strong&gt; Luca Boscarato&lt;br&gt;&#xA;&lt;strong&gt;Degree:&lt;/strong&gt; Bachelor in Computer Science (110 cum laude)&lt;br&gt;&#xA;&lt;strong&gt;Institution:&lt;/strong&gt; Free University of Bolzano (UNIBZ)&lt;br&gt;&#xA;&lt;strong&gt;Date:&lt;/strong&gt; July 2024&lt;br&gt;&#xA;&lt;strong&gt;Supervisors:&lt;/strong&gt; Prof. Maurizio Tavelli, Prof. Bruno Carpentieri&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;This is my bachelor&amp;rsquo;s thesis, completed in 2024 as part of my Computer Science degree at the Free University of Bolzano. I graduated with &lt;strong&gt;110 cum laude&lt;/strong&gt;, and this work represents a significant milestone in my academic journey.&lt;br&gt;&#xA;The thesis was completed under the supervision of &lt;strong&gt;Prof. Maurizio Tavelli&lt;/strong&gt; and co-supervision of &lt;strong&gt;Prof. Bruno Carpentieri&lt;/strong&gt;, as part of the PRIN project &lt;em&gt;&amp;ldquo;Hybrid Transient–Machine Learning Approach for Anomaly Detection and Classification in Water Transmission Mains (TANDEM)&amp;rdquo;&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

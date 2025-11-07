@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Havel29</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Havel29</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jul 2024 10:00:00 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bachelor&#39;s Thesis: High-Performance Flow Simulation</title>
+      <link>http://localhost:1313/projects/bachelors-thesis-high-performance-flow-simulation/</link>
+      <pubDate>Mon, 01 Jul 2024 10:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/projects/bachelors-thesis-high-performance-flow-simulation/</guid>
+      <description>&lt;h2 id=&#34;bachelors-thesis&#34;&gt;Bachelor&amp;rsquo;s Thesis&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Full Title:&lt;/strong&gt; A High-Performance Semi-Implicit Numerical Method for the Simulation of Compressible Flows in Systems of Compliant Elastic Pipes&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Author:&lt;/strong&gt; Luca Boscarato&lt;br&gt;&#xA;&lt;strong&gt;Degree:&lt;/strong&gt; Bachelor in Computer Science (110 cum laude)&lt;br&gt;&#xA;&lt;strong&gt;Institution:&lt;/strong&gt; Free University of Bolzano (UNIBZ)&lt;br&gt;&#xA;&lt;strong&gt;Date:&lt;/strong&gt; July 2024&lt;br&gt;&#xA;&lt;strong&gt;Supervisors:&lt;/strong&gt; Prof. Maurizio Tavelli, Prof. Bruno Carpentieri&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;This is my bachelor&amp;rsquo;s thesis, completed in 2024 as part of my Computer Science degree at the Free University of Bolzano. I graduated with &lt;strong&gt;110 cum laude&lt;/strong&gt;, and this work represents a significant milestone in my academic journey.&lt;br&gt;&#xA;The thesis was completed under the supervision of &lt;strong&gt;Prof. Maurizio Tavelli&lt;/strong&gt; and co-supervision of &lt;strong&gt;Prof. Bruno Carpentieri&lt;/strong&gt;, as part of the PRIN project &lt;em&gt;&amp;ldquo;Hybrid Transient–Machine Learning Approach for Anomaly Detection and Classification in Water Transmission Mains (TANDEM)&amp;rdquo;&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;p&gt;Hi! I&amp;rsquo;m &lt;strong&gt;Luca Boscarato&lt;/strong&gt;, also known as &lt;strong&gt;Havel29&lt;/strong&gt; in the cybersecurity/gaming community. I&amp;rsquo;m a computer science student and researcher with a passion for tackling complex challenges at the intersection of artificial intelligence and security.&lt;/p&gt;&#xA;&lt;p&gt;Currently pursuing a Master&amp;rsquo;s degree in Data Science at the Free University of Bolzano, I focus on exploring how machine learning can address problems previously considered intractable. My approach combines rigorous mathematical reasoning with practical implementation, always seeking elegant solutions to difficult challenges. I believe that the most valuable skill in technology is not knowing specific tools, but rather the ability to understand complex systems, identify patterns, and develop innovative solutions.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Contact</title>
+      <link>http://localhost:1313/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/contact/</guid>
+      <description>&lt;h1 id=&#34;contact-me&#34;&gt;Contact Me&lt;/h1&gt;&#xA;&lt;p&gt;Feel free to reach out through any of the methods below. I&amp;rsquo;m always excited to connect with fellow developers and discuss interesting projects!&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

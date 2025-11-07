@@ -1,0 +1,18 @@
+# Hugo source files - keep the blog directory in git
+# But ignore certain build artifacts
+
+# Hugo cache
+blog/.hugo_build.lock
+blog/resources/
+blog/.DS_Store
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

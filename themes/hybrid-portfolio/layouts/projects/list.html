@@ -1,0 +1,91 @@
+{{ define "main" }}
+<div class="page-header">
+    <div class="max-w-4xl mx-auto px-6">
+        <h1 class="page-title">Projects</h1>
+        <p class="page-subtitle">
+            A showcase of my work, experiments, and contributions to the tech community
+        </p>
+    </div>
+</div>
+
+<div class="max-w-6xl mx-auto px-6 py-16">
+    {{ if .Pages }}
+    <!-- All Projects -->
+    <section>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {{ range .Pages }}
+            <article class="project-card group fade-in">
+                <div class="project-card-inner">
+                    <div class="project-image">
+                        <i class="fas fa-code text-4xl text-blue-400"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <time class="text-xs text-blue-400 bg-blue-400/10 px-2 py-1 rounded-full">
+                                {{ .Date.Format "Jan 2006" }}
+                            </time>
+                        </div>
+                        
+                        <h3 class="text-xl font-semibold mb-3 text-slate-100 group-hover:text-blue-400 transition-colors">
+                            <a href="{{ .Permalink }}">{{ .Title }}</a>
+                        </h3>
+                        
+                        <p class="text-slate-400 text-sm mb-4 line-clamp-3">
+                            {{ .Summary | truncate 120 }}
+                        </p>
+                        
+                        {{ if .Params.tech }}
+                        <div class="flex flex-wrap gap-1 mb-4">
+                            {{ range first 3 .Params.tech }}
+                            <span class="text-xs text-slate-400 bg-slate-700 px-2 py-1 rounded">{{ . }}</span>
+                            {{ end }}
+                            {{ if gt (len .Params.tech) 3 }}
+                            <span class="text-xs text-slate-500">+{{ sub (len .Params.tech) 3 }}</span>
+                            {{ end }}
+                        </div>
+                        {{ end }}
+                        
+                        <div class="flex items-center justify-between">
+                            <a href="{{ .Permalink }}" class="text-blue-400 hover:text-blue-300 transition-colors">
+                                View Details <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                            <div class="flex space-x-2">
+                                {{ if .Params.github }}
+                                <a href="{{ .Params.github }}" target="_blank" class="text-slate-400 hover:text-blue-400 transition-colors">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                {{ end }}
+                                {{ if .Params.demo }}
+                                <a href="{{ .Params.demo }}" target="_blank" class="text-slate-400 hover:text-blue-400 transition-colors">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                {{ end }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            {{ end }}
+        </div>
+    </section>
+    
+    {{ else }}
+    <!-- Empty State -->
+    <div class="text-center py-20 fade-in">
+        <i class="fas fa-hammer text-6xl text-slate-600 mb-6"></i>
+        <h2 class="text-2xl font-bold text-slate-300 mb-4">Projects Coming Soon</h2>
+        <p class="text-slate-400 mb-8 max-w-md mx-auto">
+            I'm working on some exciting projects that will be showcased here. Stay tuned for updates!
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/writeups/" class="cta-secondary">
+                <i class="fas fa-blog mr-2"></i>Read My Writeups
+            </a>
+            <a href="/contact/" class="cta-secondary">
+                <i class="fas fa-envelope mr-2"></i>Get In Touch
+            </a>
+        </div>
+    </div>
+    {{ end }}
+</div>
+{{ end }}

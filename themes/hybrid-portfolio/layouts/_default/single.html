@@ -4,8 +4,8 @@
     <header class="page-header">
         <div class="max-w-4xl mx-auto px-6">
             <div class="mb-6">
-                <a href="/posts/" class="text-blue-400 hover:text-blue-300 transition-colors text-sm">
-                    <i class="fas fa-arrow-left mr-2"></i>Back to Posts
+                <a href="/projects/" class="text-blue-400 hover:text-blue-300 transition-colors text-sm">
+                    <i class="fas fa-arrow-left mr-2"></i>Back to Projects
                 </a>
             </div>
             
@@ -35,7 +35,7 @@
             {{ if .Params.tags }}
             <div class="flex flex-wrap gap-2 mt-4">
                 {{ range .Params.tags }}
-                <span class="text-xs text-blue-400 bg-blue-400/10 px-3 py-1 rounded-full border border-blue-400/20">
+                <span class="text-xs text-blue-400 bg-blue-400/10 px-2 py-1 rounded-full border border-blue-400/20">
                     {{ . }}
                 </span>
                 {{ end }}
@@ -87,9 +87,7 @@
             <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
                 <div class="flex items-start space-x-4">
                     <div class="w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 p-1 flex-shrink-0">
-                        <div class="w-full h-full rounded-full bg-slate-900 flex items-center justify-center">
-                            <i class="fas fa-user text-xl text-blue-400"></i>
-                        </div>
+                        <img src="/files/shark.png" alt="{{ .Site.Params.author }}" class="w-full h-full rounded-full object-cover">
                     </div>
                     <div>
                         <h3 class="text-lg font-semibold text-slate-100 mb-2">
@@ -112,6 +110,11 @@
                             {{ if .Site.Params.linkedin }}
                             <a href="{{ .Site.Params.linkedin }}" target="_blank" class="text-slate-400 hover:text-blue-400 transition-colors">
                                 <i class="fab fa-linkedin"></i>
+                            </a>
+                            {{ end }}
+                            {{ if .Site.Params.discord }}
+                            <a href="#" onclick="navigator.clipboard.writeText('{{ .Site.Params.discord }}'); this.innerHTML='<i class=\'fab fa-discord\'></i> Copied!'; setTimeout(() => this.innerHTML='<i class=\'fab fa-discord\'></i>', 2000)" class="text-slate-400 hover:text-blue-400 transition-colors cursor-pointer">
+                                <i class="fab fa-discord"></i>
                             </a>
                             {{ end }}
                         </div>

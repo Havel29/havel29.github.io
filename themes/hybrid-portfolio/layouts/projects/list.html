@@ -26,21 +26,18 @@
                             </time>
                         </div>
                         
-                        <h3 class="text-xl font-semibold mb-3 text-slate-100 group-hover:text-blue-400 transition-colors">
-                            <a href="{{ .Permalink }}">{{ .Title }}</a>
+                        <h3 class="text-lg font-semibold mb-3 text-slate-100 group-hover:text-blue-400 transition-colors leading-tight">
+                            <a href="{{ .Permalink }}" class="block">{{ .Title }}</a>
                         </h3>
                         
                         <p class="text-slate-400 text-sm mb-4 line-clamp-3">
-                            {{ .Summary | truncate 120 }}
+                            {{ if .Description }}{{ .Description }}{{ else }}{{ .Summary }}{{ end }}
                         </p>
                         
                         {{ if .Params.tech }}
                         <div class="flex flex-wrap gap-1 mb-4">
-                            {{ range first 3 .Params.tech }}
+                            {{ range .Params.tech }}
                             <span class="text-xs text-slate-400 bg-slate-700 px-2 py-1 rounded">{{ . }}</span>
-                            {{ end }}
-                            {{ if gt (len .Params.tech) 3 }}
-                            <span class="text-xs text-slate-500">+{{ sub (len .Params.tech) 3 }}</span>
                             {{ end }}
                         </div>
                         {{ end }}

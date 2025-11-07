@@ -1,9 +1,9 @@
 {{ define "main" }}
 <div class="page-header">
     <div class="max-w-4xl mx-auto px-6">
-        <h1 class="page-title">Blog Posts</h1>
+        <h1 class="page-title">CTF Writeups</h1>
         <p class="page-subtitle">
-            Technical writeups, tutorials, and thoughts on technology
+            Here you will find CTF Writeups of mine
         </p>
     </div>
 </div>
@@ -40,18 +40,15 @@
                     
                     <!-- Summary -->
                     <p class="text-slate-400 text-sm mb-4 line-clamp-3">
-                        {{ .Summary | truncate 120 }}
+                        {{ if .Description }}{{ .Description }}{{ else }}{{ .Summary }}{{ end }}
                     </p>
                     
                     <!-- Tags and Read More -->
                     <div class="flex items-center justify-between">
                         {{ if .Params.tags }}
-                        <div class="flex flex-wrap gap-1">
-                            {{ range first 2 .Params.tags }}
-                            <span class="text-xs text-slate-400 bg-slate-700 px-2 py-1 rounded">{{ . }}</span>
-                            {{ end }}
-                            {{ if gt (len .Params.tags) 2 }}
-                            <span class="text-xs text-slate-500">+{{ sub (len .Params.tags) 2 }} more</span>
+                        <div class="flex flex-wrap gap-2">
+                            {{ range .Params.tags }}
+                            <span class="text-xs text-white bg-slate-600 px-3 py-1 rounded-full border border-slate-500">{{ . }}</span>
                             {{ end }}
                         </div>
                         {{ end }}
@@ -77,7 +74,7 @@
             
             {{ range .Paginator.Pagers }}
             {{ if eq . $.Paginator }}
-            <span class="px-4 py-2 bg-blue-600 text-white rounded">{{ .PageNumber }}</span>
+            <span class="px-4 py-2 bg-slate-700 text-white rounded border border-slate-600">{{ .PageNumber }}</span>
             {{ else }}
             <a href="{{ .URL }}" class="px-4 py-2 bg-slate-800 text-slate-300 rounded hover:bg-slate-700 transition-colors">
                 {{ .PageNumber }}

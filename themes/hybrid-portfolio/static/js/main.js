@@ -436,9 +436,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('theme-toggle');
     
     // Load saved theme immediately on page load (before DOMContentLoaded)
+    // Default to dark theme
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'light') {
         document.body.classList.add('light-theme');
+    } else if (!savedTheme) {
+        // No saved theme, default to dark (do nothing, dark is default)
+        localStorage.setItem('theme', 'dark');
     }
     
     // Function to update header based on current theme and scroll position
@@ -583,6 +587,59 @@ document.addEventListener('DOMContentLoaded', function() {
         const scrolled = (window.scrollY / windowHeight) * 100;
         scrollProgress.style.width = scrolled + '%';
     });
+
+    // === MATRIX RAIN BACKGROUND ===
+    const canvas = document.getElementById('matrix-canvas');
+    if (canvas) {
+        const ctx = canvas.getContext('2d');
+        
+        // Set canvas size
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        // Characters to display - mix of code symbols and hex
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン{}[]()<>/\\|#$%&*+=';
+        const charArray = chars.split('');
+        
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+        
+        // Array for drops - one per column
+        const drops = Array(Math.floor(columns)).fill(1);
+        
+        // Draw function
+        function drawMatrix() {
+            // Fade effect
+            ctx.fillStyle = 'rgba(15, 23, 42, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.fillStyle = '#0ea5e9'; // Cyan color
+            ctx.font = fontSize + 'px monospace';
+            
+            // Loop through drops
+            for (let i = 0; i < drops.length; i++) {
+                // Random character
+                const text = charArray[Math.floor(Math.random() * charArray.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                
+                // Reset drop randomly
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                
+                drops[i]++;
+            }
+        }
+        
+        // Animation loop
+        setInterval(drawMatrix, 50);
+        
+        // Resize handler
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    }
 
     // === CARD EFFECTS HANDLED BY CSS ===
     // All card hover effects (including sparkle borders and transitions) are now

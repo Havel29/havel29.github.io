@@ -1,4 +1,7 @@
 ﻿{{ define "main" }}
+<!-- Matrix Rain Background -->
+<canvas id="matrix-canvas"></canvas>
+
 <section class="hero-modern">
     <!-- Animated mathematical particles -->
     <div class="particle"></div>
@@ -10,19 +13,67 @@
     <div class="particle"></div>
     <div class="particle"></div>
     
+    <!-- ASCII Art Header -->
+    <div class="ascii-art fade-in">
+        <pre class="ascii-logo">
+ _    _                 _ ___   ___  
+| |  | |               | |__ \ / _ \ 
+| |__| | __ ___   _____| |  ) | (_) |
+|  __  |/ _` \ \ / / _ \ | / / \__, |
+| |  | | (_| |\ V /  __/ |/ /_   / / 
+|_|  |_|\__,_| \_/ \___|_|____|/_/  
+        </pre>
+    </div>
+    
     <div class="hero-container fade-in-up">
-                    <div class="hero-avatar pulse-glow">
-                <i class="fas fa-terminal terminal-blink"></i>
+        <!-- Terminal-Style Command Section -->
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <span class="terminal-button red"></span>
+                <span class="terminal-button yellow"></span>
+                <span class="terminal-button green"></span>
+                <span class="terminal-title">havel29@portfolio:~$</span>
             </div>
-            <h1 class="hero-heading"><span id="typewriter-text"></span><span class="typewriter-cursor">|</span></h1>
-            <p class="hero-subheading slide-in delay-1">CTF Player • Student • CS Enthusiast</p>
+            <div class="terminal-body">
+                <div class="terminal-line">
+                    <span class="terminal-prompt">$</span>
+                    <span class="terminal-command">whoami</span>
+                </div>
+                <div class="terminal-output">havel29 - Computer Science Student @ UNIBZ</div>
+                
+                <div class="terminal-line">
+                    <span class="terminal-prompt">$</span>
+                    <span class="terminal-command">cat skills.txt</span>
+                </div>
+                <div class="terminal-output terminal-skills">
+                    <span class="skill-tag">Machine Learning</span>
+                    <span class="skill-tag">Cybersecurity</span>
+                    <span class="skill-tag">CTF</span>
+                    <span class="skill-tag">Research</span>
+                </div>
+                
+                <div class="terminal-line">
+                    <span class="terminal-prompt">$</span>
+                    <span class="terminal-command">./explore_portfolio.sh</span>
+                </div>
+                <div class="terminal-output">
+                    <span class="loading-dots">Loading projects<span class="dots"></span></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-avatar pulse-glow">
+            <i class="fas fa-terminal terminal-blink"></i>
+        </div>
+        <h1 class="hero-heading"><span id="typewriter-text"></span><span class="typewriter-cursor">|</span></h1>
+        <p class="hero-subheading slide-in delay-1">CTF Player • Student • CS Enthusiast</p>
         <p class="hero-text slide-in delay-1">{{ .Site.Params.heroDescription | default "Under construction." }}</p>
         <div class="hero-buttons slide-in delay-2">
             <a href="/about/" class="btn-primary btn-glow">
-                <i class="fas fa-user"></i> <span>About</span>
+                <span class="btn-prefix">sudo</span> <i class="fas fa-user"></i> <span>view_about</span>
             </a>
-            <a href="/posts/" class="btn-outline btn-shine">
-                <i class="fas fa-lock"></i> <span>Writeups</span>
+            <a href="/writeups/" class="btn-outline btn-shine">
+                <span class="btn-prefix">./</span><i class="fas fa-lock"></i> <span>run_writeups.sh</span>
             </a>
         </div>
     </div>
@@ -108,13 +159,13 @@
                 </div>
             {{ end }}
         </div>
-        {{ if gt (len $posts) 0 }}<div class="section-link"><a href="/posts/">All Writeups <i class="fas fa-arrow-right"></i></a></div>{{ end }}
+        {{ if gt (len $posts) 0 }}<div class="section-link"><a href="/writeups/">All Writeups <i class="fas fa-arrow-right"></i></a></div>{{ end }}
     </div>
 </section>
 <section class="cta-section">
     <div class="cta-container fade-in-up">
         <h2>Interested in Collaboration?</h2>
-        <p>Reach out for security research, ML projects, or crypto discussions.</p>
+        <p>Reach out to me.</p>
         <a href="/about/" class="btn-primary large btn-glow"><i class="fas fa-envelope"></i> Get in Touch</a>
     </div>
 </section>

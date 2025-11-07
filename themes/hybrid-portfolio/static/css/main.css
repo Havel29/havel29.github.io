@@ -2336,6 +2336,7 @@ body.light-theme .content-card {
 .content-card:hover {
     border-color: var(--accent-primary);
     box-shadow: 0 8px 20px var(--shadow-color);
+    transform: translateY(-5px);
 }
 
 @keyframes borderGlow {

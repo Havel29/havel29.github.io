@@ -584,17 +584,9 @@ document.addEventListener('DOMContentLoaded', function() {
         scrollProgress.style.width = scrolled + '%';
     });
 
-    // === CARD HOVER EFFECT (Removed 3D tilt for professional look) ===
-    const cards = document.querySelectorAll('.card-hover');
-    cards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            card.style.transform = 'translateY(-10px)';
-        });
-        
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'translateY(0)';
-        });
-    });
+    // === CARD EFFECTS HANDLED BY CSS ===
+    // All card hover effects (including sparkle borders and transitions) are now
+    // handled purely through CSS for better performance and no JavaScript conflicts
 
     console.log('%c🚀 Portfolio Loaded Successfully!', 'color: #60a5fa; font-size: 16px; font-weight: bold;');
     console.log('%c💻 Made with ❤️ and lots of ☕', 'color: #94a3b8; font-size: 12px;');

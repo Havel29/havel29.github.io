@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Effects Test</title>
+    <link rel="stylesheet" href="themes/hybrid-portfolio/static/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            padding: 50px;
+            background: #0f172a;
+            min-height: 100vh;
+        }
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #60a5fa;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-family: 'Inter', sans-serif;
+        }
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(59, 130, 246, 0.2);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: #60a5fa;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+        }
+        .theme-toggle:hover {
+            background: rgba(59, 130, 246, 0.3);
+            border-color: rgba(59, 130, 246, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="document.body.classList.toggle('light-theme')">
+        Toggle Theme
+    </button>
+    
+    <div class="test-container">
+        <h1><i class="fas fa-test-tube"></i> Card Effects Test Page</h1>
+        
+        <div class="content-grid">
+            <!-- Test Card 1: Project Card with sparkle -->
+            <article class="content-card card-hover">
+                <div class="card-content">
+                    <div class="card-icon blue"><i class="fas fa-brain"></i></div>
+                    <h3 class="card-title">Machine Learning Project</h3>
+                    <p class="card-excerpt">
+                        Test card with rotating border sparkle effect. 
+                        Hover over me to see the professional animation!
+                    </p>
+                    <a href="#" class="card-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <!-- Test Card 2: CTF Writeup Style -->
+            <a href="#" class="content-card card-hover" style="text-decoration: none; color: inherit; display: block;">
+                <div class="card-meta">
+                    <span class="badge blue">Jan '25</span>
+                    <span class="tag">Crypto</span>
+                    <span class="tag">Hard</span>
+                </div>
+                <h3>CTF Challenge Writeup</h3>
+                <p>
+                    This card demonstrates the clean hover effect without 3D rotations.
+                    Notice the smooth lift and sparkle animation.
+                </p>
+                <div class="card-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- Test Card 3: Project Card Inner (like projects page) -->
+            <article class="project-card group fade-in">
+                <div class="project-card-inner">
+                    <div class="project-image" style="height: 12rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1)); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid rgba(59, 130, 246, 0.1);">
+                        <i class="fas fa-code text-4xl" style="font-size: 3rem; color: #60a5fa;"></i>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; color: #e2e8f0;">
+                            Project Card with Border Sparkle
+                        </h3>
+                        <p style="color: #94a3b8; margin-bottom: 1rem;">
+                            This is a project-card-inner style with the enhanced sparkle effect traveling along the border.
+                        </p>
+                        <a href="#" style="color: #60a5fa; text-decoration: none;">
+                            View Details <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Test Card 4: Blog Card -->
+            <article class="blog-card group fade-in">
+                <div class="blog-card-inner">
+                    <div style="height: 12rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1)); display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-file-alt" style="font-size: 3rem; color: #60a5fa;"></i>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+                            <time style="font-size: 0.75rem; color: #60a5fa; background: rgba(59, 130, 246, 0.1); padding: 0.25rem 0.5rem; border-radius: 9999px;">
+                                Jul 01, 2024
+                            </time>
+                            <span style="font-size: 0.75rem; color: #94a3b8;">4 min read</span>
+                        </div>
+                        <h2 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem; color: #e2e8f0;">
+                            Blog Post Card
+                        </h2>
+                        <p style="color: #94a3b8; font-size: 0.875rem; margin-bottom: 1rem;">
+                            Blog card with smooth sparkle animation. No 3D rotation, just professional effects.
+                        </p>
+                        <a href="#" style="color: #60a5fa; text-decoration: none;">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div style="margin-top: 3rem; padding: 2rem; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); border-radius: 1rem; color: #94a3b8; text-align: center;">
+            <h3 style="color: #60a5fa; margin-bottom: 1rem;">✨ Testing Instructions</h3>
+            <ul style="text-align: left; max-width: 600px; margin: 0 auto; list-style: none; padding: 0;">
+                <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: #10b981;"></i> Hover over cards to see smooth lift effect</li>
+                <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: #10b981;"></i> Watch the sparkle travel along borders</li>
+                <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: #10b981;"></i> Notice NO 3D rotation or weird transformations</li>
+                <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: #10b981;"></i> Toggle theme to test light/dark compatibility</li>
+                <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: #10b981;"></i> Effects are pure CSS - no JavaScript conflicts</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="themes/hybrid-portfolio/static/js/main.js"></script>
+</body>
+</html>

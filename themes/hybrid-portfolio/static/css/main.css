@@ -3594,3 +3594,51 @@ body.light-theme .skill-tag:hover {
     }
 }
 
+/* Additional Light Theme Fixes */
+body.light-theme .prose,
+body.light-theme .prose p,
+body.light-theme .prose h1,
+body.light-theme .prose h2,
+body.light-theme .prose h3,
+body.light-theme .prose h4,
+body.light-theme .prose h5,
+body.light-theme .prose h6,
+body.light-theme .prose strong,
+body.light-theme .prose em,
+body.light-theme .prose li,
+body.light-theme .prose blockquote {
+    color: var(--text-primary) !important;
+}
+
+body.light-theme .prose code {
+    background: rgba(0, 0, 0, 0.1);
+    color: var(--text-primary) !important;
+    padding: 0.2em 0.4em;
+    border-radius: 0.25rem;
+}
+
+body.light-theme .prose pre {
+    background: rgba(0, 0, 0, 0.05) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .prose pre code {
+    background: transparent !important;
+    color: var(--text-primary) !important;
+}
+
+/* Fix Featured Projects section title */
+body.light-theme .section-title,
+body.light-theme .section-title * {
+    color: var(--text-primary) !important;
+}
+
+/* Fix any remaining hidden elements */
+body.light-theme .content-section h2,
+body.light-theme .content-section h3,
+body.light-theme .content-section p,
+body.light-theme .content-section span,
+body.light-theme .content-section div {
+    color: var(--text-primary) !important;
+}
+

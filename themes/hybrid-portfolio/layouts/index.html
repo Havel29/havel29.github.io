@@ -80,14 +80,14 @@
 </section>
 <section class="stats-section">
     <div class="stats-container">
-        <div class="stat-box stat-animate" data-count="{{ len (where .Site.RegularPages "Section" "writeups") }}">
+        <div class="stat-box stat-animate" data-count="{{ len (where .Site.Pages "Type" "writeups") }}">
             <div class="stat-icon"><i class="fas fa-file-code"></i></div>
-            <div class="stat-number counter">{{ len (where .Site.RegularPages "Section" "writeups") }}</div>
+            <div class="stat-number counter">{{ len (where .Site.Pages "Type" "writeups") }}</div>
             <div class="stat-label">Writeups</div>
         </div>
-        <div class="stat-box stat-animate" data-count="{{ len (where .Site.RegularPages "Section" "projects") }}">
+        <div class="stat-box stat-animate" data-count="{{ len (where .Site.Pages "Type" "projects") }}">
             <div class="stat-icon"><i class="fas fa-project-diagram"></i></div>
-            <div class="stat-number counter">{{ len (where .Site.RegularPages "Section" "projects") }}</div>
+            <div class="stat-number counter">{{ len (where .Site.Pages "Type" "projects") }}</div>
             <div class="stat-label">Projects</div>
         </div>
         <div class="stat-box stat-animate">

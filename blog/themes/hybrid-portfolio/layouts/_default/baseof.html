@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Summary | truncate 160 }}{{ end }}">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ "/css/main.css" | relURL }}">
+    
+    <!-- Meta Tags -->
+    <meta name="author" content="{{ .Site.Params.author }}">
+    {{ if .IsPage }}
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{ .Title }}">
+    <meta property="og:description" content="{{ .Summary | truncate 160 }}">
+    <meta property="og:url" content="{{ .Permalink }}">
+    {{ if .Date }}
+    <meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z" }}">
+    {{ end }}
+    {{ else }}
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ .Site.Title }}">
+    <meta property="og:description" content="{{ .Site.Params.description }}">
+    <meta property="og:url" content="{{ .Site.BaseURL }}">
+    {{ end }}
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="{{ .Site.Params.primaryColor | default "#2563eb" }}">
+    
+    <!-- Prevent theme flash on load -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme');
+            if (theme === 'light') {
+                document.documentElement.classList.add('light-theme');
+                document.body.classList.add('light-theme');
+            }
+        })();
+    </script>
+</head>
+<body>
+    {{ partial "header.html" . }}
+    
+    <main class="main-content">
+        {{ block "main" . }}{{ end }}
+    </main>
+    
+    {{ partial "footer.html" . }}
+    
+    <!-- Scripts -->
+    <script src="{{ "js/main.js" | relURL }}"></script>
+</body>
+</html>

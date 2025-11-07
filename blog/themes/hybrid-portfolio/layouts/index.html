@@ -1,0 +1,121 @@
+﻿{{ define "main" }}
+<section class="hero-modern">
+    <!-- Animated mathematical particles -->
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    
+    <div class="hero-container fade-in-up">
+                    <div class="hero-avatar pulse-glow">
+                <i class="fas fa-terminal terminal-blink"></i>
+            </div>
+            <h1 class="hero-heading"><span id="typewriter-text"></span><span class="typewriter-cursor">|</span></h1>
+            <p class="hero-subheading slide-in delay-1">CTF Player • Student • Enthusiast</p>
+        <p class="hero-text slide-in delay-1">{{ .Site.Params.heroDescription | default "Under construction." }}</p>
+        <div class="hero-buttons slide-in delay-2">
+            <a href="/about/" class="btn-primary btn-glow">
+                <i class="fas fa-user"></i> <span>About</span>
+            </a>
+            <a href="/posts/" class="btn-outline btn-shine">
+                <i class="fas fa-lock"></i> <span>Writeups</span>
+            </a>
+        </div>
+    </div>
+</section>
+<section class="stats-section">
+    <div class="stats-container">
+        <div class="stat-box stat-animate" data-count="{{ len (where .Site.RegularPages "Section" "posts") }}">
+            <div class="stat-icon"><i class="fas fa-file-code"></i></div>
+            <div class="stat-number counter">{{ len (where .Site.RegularPages "Section" "posts") }}</div>
+            <div class="stat-label">Writeups</div>
+        </div>
+        <div class="stat-box stat-animate" data-count="{{ len (where .Site.RegularPages "Section" "ml-projects") }}">
+            <div class="stat-icon"><i class="fas fa-project-diagram"></i></div>
+            <div class="stat-number counter">{{ len (where .Site.RegularPages "Section" "ml-projects") }}</div>
+            <div class="stat-label">Projects</div>
+        </div>
+        <div class="stat-box stat-animate">
+            <div class="stat-icon"><i class="fas fa-coffee"></i></div>
+            <div class="stat-number">
+                <span style="font-size: 0.9rem; font-style: italic;">lim</span><sub style="font-size: 0.7rem;">x→0</sub><span style="font-size: 1.2rem;"> 1/x</span>
+            </div>
+            <div class="stat-label">Coffee Cups</div>
+        </div>
+    </div>
+</section>
+<section class="content-section">
+    <div class="container">
+        <h2 class="section-title fade-in-up">Featured Projects</h2>
+        <div class="content-grid">
+            {{ $projects := (where .Site.RegularPages "Section" "ml-projects") }}
+            {{ range first 3 $projects }}
+            <article class="content-card card-hover">
+                {{ if .Params.image }}<div class="card-image"><img src="{{ .Params.image }}" alt="{{ .Title }}"></div>{{ end }}
+                <div class="card-content">
+                    <div class="card-icon"><i class="fas fa-brain"></i></div>
+                    <h3 class="card-title">{{ .Title }}</h3>
+                    <p class="card-excerpt">{{ .Summary }}</p>
+                    <a href="{{ .Permalink }}" class="card-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+            {{ end }}
+        </div>
+        <div class="section-cta-center">
+            <a href="/ml-projects" class="btn-outline btn-shine">View All Projects</a>
+        </div>
+    </div>
+</section>
+<section class="content-section alt">
+    <div class="content-container">
+        <div class="section-title fade-in-up">
+            <h2><i class="fas fa-lock terminal-blink"></i> Crypto Writeups</h2>
+            <p>CTF writeups and security research</p>
+        </div>
+        <div class="card-grid">
+            {{ $posts := where .Site.RegularPages "Section" "posts" }}
+            {{ if gt (len $posts) 0 }}
+                {{ range first 3 $posts }}
+                <div class="content-card card-hover">
+                    <div class="card-meta">
+                        <span class="badge blue">{{ .Date.Format "Jan '06" }}</span>
+                        {{ if .Params.tags }}{{ range first 2 .Params.tags }}<span class="tag">{{ . }}</span>{{ end }}{{ end }}
+                    </div>
+                    <h3>{{ .Title }}</h3>
+                    <p>{{ .Summary | truncate 110 }}</p>
+                    <a href="{{ .Permalink }}" class="card-arrow"><i class="fas fa-arrow-right"></i></a>
+                </div>
+                {{ end }}
+            {{ else }}
+                <div class="empty-state">
+                    <div class="empty-state-icon">
+                        <i class="fas fa-file-code"></i>
+                        <div class="icon-particles">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <h3 class="empty-state-title">No Writeups Yet</h3>
+                    <p class="empty-state-text">Security research and CTF writeups will be published here soon. Stay tuned for detailed cryptographic challenges and vulnerability analysis.</p>
+                    <div class="empty-state-badge">
+                        <i class="fas fa-clock"></i> Coming Soon
+                    </div>
+                </div>
+            {{ end }}
+        </div>
+        {{ if gt (len $posts) 0 }}<div class="section-link"><a href="/posts/">All Writeups <i class="fas fa-arrow-right"></i></a></div>{{ end }}
+    </div>
+</section>
+<section class="cta-section">
+    <div class="cta-container fade-in-up">
+        <h2>Interested in Collaboration?</h2>
+        <p>Reach out for security research, ML projects, or crypto discussions.</p>
+        <a href="/about/" class="btn-primary large btn-glow"><i class="fas fa-envelope"></i> Get in Touch</a>
+    </div>
+</section>
+{{ end }}

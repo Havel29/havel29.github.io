@@ -1,0 +1,61 @@
+baseURL = "https://havel29.github.io"
+languageCode = "en-us"
+title = "Havel29"
+theme = "hybrid-portfolio"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params]
+  # Site info
+  author = "Havel29"
+  description = "Personal website - under construction"
+  
+  # Homepage hero
+  heroTitle = "Hello, I'm Havel29"
+  heroSubtitle = "CTF Player • Student • ML Enthusiast"
+  heroDescription = "Under construction."
+  
+  # Social links
+  github = "https://github.com/havel29"
+  twitter = ""
+  linkedin = ""
+  email = ""
+  
+  # Personal info
+  fullName = ""
+  university = ""
+  location = ""
+  campus = ""
+  program = ""
+  
+  # Features
+  showReadingTime = true
+  showShareButtons = true
+  showPostNavLinks = true
+  showBreadcrumbs = true
+  showCodeCopyButtons = true
+  
+  # Colors and theme
+  primaryColor = "#2563eb"
+  backgroundColor = "#0f172a"
+  textColor = "#e2e8f0"
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 10
+  
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 20
+
+[permalinks]
+  posts = "/posts/:slug/"
+  projects = "/projects/:slug/"

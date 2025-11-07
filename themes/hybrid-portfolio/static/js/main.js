@@ -14,16 +14,28 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Header background on scroll
+    // Header background on scroll - respects theme
     const header = document.querySelector('.modern-header');
     if (header) {
         window.addEventListener('scroll', () => {
+            const isLightTheme = document.body.classList.contains('light-theme');
+            
             if (window.scrollY > 50) {
-                header.style.background = 'rgba(15, 23, 42, 0.98)';
-                header.style.boxShadow = '0 8px 40px rgba(0, 0, 0, 0.5)';
+                if (isLightTheme) {
+                    header.style.background = 'rgba(255, 255, 255, 0.98)';
+                    header.style.boxShadow = '0 8px 40px rgba(0, 0, 0, 0.1)';
+                } else {
+                    header.style.background = 'rgba(15, 23, 42, 0.98)';
+                    header.style.boxShadow = '0 8px 40px rgba(0, 0, 0, 0.5)';
+                }
             } else {
-                header.style.background = 'rgba(15, 23, 42, 0.95)';
-                header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.3)';
+                if (isLightTheme) {
+                    header.style.background = 'rgba(255, 255, 255, 0.95)';
+                    header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.05)';
+                } else {
+                    header.style.background = 'rgba(15, 23, 42, 0.95)';
+                    header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.3)';
+                }
             }
         });
     }
@@ -429,11 +441,41 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.add('light-theme');
     }
     
+    // Function to update header based on current theme and scroll position
+    function updateHeaderTheme() {
+        const header = document.querySelector('.modern-header');
+        if (!header) return;
+        
+        const isLightTheme = document.body.classList.contains('light-theme');
+        const scrolled = window.scrollY > 50;
+        
+        if (scrolled) {
+            if (isLightTheme) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 8px 40px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(15, 23, 42, 0.98)';
+                header.style.boxShadow = '0 8px 40px rgba(0, 0, 0, 0.5)';
+            }
+        } else {
+            if (isLightTheme) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.05)';
+            } else {
+                header.style.background = 'rgba(15, 23, 42, 0.95)';
+                header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.3)';
+            }
+        }
+    }
+    
     if (themeToggle) {
         themeToggle.addEventListener('click', function() {
             document.body.classList.toggle('light-theme');
             const isLight = document.body.classList.contains('light-theme');
             localStorage.setItem('theme', isLight ? 'light' : 'dark');
+            
+            // Update header immediately when theme changes
+            updateHeaderTheme();
             
             // Add animation to the button
             this.style.transform = 'rotate(360deg) scale(1.2)';
@@ -542,25 +584,15 @@ document.addEventListener('DOMContentLoaded', function() {
         scrollProgress.style.width = scrolled + '%';
     });
 
-    // === CARD TILT EFFECT (3D) ===
+    // === CARD HOVER EFFECT (Removed 3D tilt for professional look) ===
     const cards = document.querySelectorAll('.card-hover');
     cards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            const rotateX = (y - centerY) / 10;
-            const rotateY = (centerX - x) / 10;
-            
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-10px)';
         });
         
         card.addEventListener('mouseleave', () => {
-            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+            card.style.transform = 'translateY(0)';
         });
     });
 

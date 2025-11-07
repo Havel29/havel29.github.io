@@ -723,29 +723,49 @@ html, body {
     position: absolute;
     top: -2px;
     left: -100%;
-    width: 50%;
+    width: 40%;
     height: calc(100% + 4px);
-    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.6), transparent);
+    background: linear-gradient(
+        90deg, 
+        transparent 0%,
+        rgba(59, 130, 246, 0.1) 20%,
+        rgba(59, 130, 246, 0.8) 50%,
+        rgba(59, 130, 246, 0.1) 80%,
+        transparent 100%
+    );
     pointer-events: none;
     z-index: 1;
+    filter: blur(1px);
 }
 
 .project-card:hover .project-card-inner::before {
-    animation: borderSparkle 2s linear infinite;
+    animation: borderSparkle 3s ease-in-out infinite;
 }
 
 @keyframes borderSparkle {
     0% {
         left: -100%;
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
     }
     100% {
         left: 100%;
+        opacity: 0;
     }
 }
 
 .project-card:hover .project-card-inner {
     border-color: rgba(59, 130, 246, 0.3);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        0 0 60px rgba(59, 130, 246, 0.15),
+        inset 0 0 40px rgba(59, 130, 246, 0.03);
+    transform: translateY(-5px);
 }
 
 .project-image {
@@ -777,20 +797,32 @@ html, body {
     position: absolute;
     top: -2px;
     left: -100%;
-    width: 50%;
+    width: 40%;
     height: calc(100% + 4px);
-    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.6), transparent);
+    background: linear-gradient(
+        90deg, 
+        transparent 0%,
+        rgba(59, 130, 246, 0.1) 20%,
+        rgba(59, 130, 246, 0.8) 50%,
+        rgba(59, 130, 246, 0.1) 80%,
+        transparent 100%
+    );
     pointer-events: none;
     z-index: 1;
+    filter: blur(1px);
 }
 
 .blog-card:hover .blog-card-inner::before {
-    animation: borderSparkle 2s linear infinite;
+    animation: borderSparkle 3s ease-in-out infinite;
 }
 
 .blog-card:hover .blog-card-inner {
     border-color: rgba(59, 130, 246, 0.3);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 
+        0 15px 30px rgba(0, 0, 0, 0.3),
+        0 0 50px rgba(59, 130, 246, 0.12),
+        inset 0 0 30px rgba(59, 130, 246, 0.03);
+    transform: translateY(-5px);
 }
 
 /* === CONTENT LAYOUTS === */

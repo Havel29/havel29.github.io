@@ -17,7 +17,6 @@ publishDir = "public"
   # Homepage hero
   heroTitle = "Hello, I'm Luca"
   heroSubtitle = "CTF Player • Student • ML Enthusiast"
-  heroDescription = "Under construction."
   
   # Social links
   github = "https://github.com/havel29"

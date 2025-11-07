@@ -136,8 +136,8 @@
                         <span class="badge blue">{{ .Date.Format "Jan '06" }}</span>
                         {{ if .Params.tags }}{{ range first 2 .Params.tags }}<span class="tag">{{ . }}</span>{{ end }}{{ end }}
                     </div>
-                    <h3>{{ .Title }}</h3>
-                    <p>{{ .Summary | truncate 110 }}</p>
+                    <h3 style="white-space: normal; overflow: visible; text-overflow: clip;">{{ .Title }}</h3>
+                    <p>{{ if .Description }}{{ .Description }}{{ else }}{{ .Summary }}{{ end }}</p>
                     <div class="card-arrow"><i class="fas fa-arrow-right"></i></div>
                 </a>
                 {{ end }}

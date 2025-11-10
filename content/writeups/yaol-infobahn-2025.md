@@ -209,8 +209,8 @@ p2, p3 = p*p, mod
 q = (p-1)//2  # half of p-1
 
   
-#Note: implementation here is provided for clarity, but sagemath offers built-in functions.
-def  padic_log_1px(x, p, mod_p3):
+
+def padic_log_1px(x, p, mod_p3):
 	"""
 	Compute the p-adic logarithm of (1 + x) modulo p^3.
 	Uses: log(1+x) = x - x^2/2 + x^3/3 - x^4/4 + ...
@@ -231,6 +231,12 @@ def  padic_log_1px(x, p, mod_p3):
         if k > 20:  # plenty for p^3 precision
             break
     return res
+
+# Note: implementation above is provided for clarity, but sagemath offers built-in functions.
+"""
+def padic_log_1px_sage(x, p, mod_p3):
+    return Integer(Zp(p, prec=3)(1 + x).log()) % mod_p3
+"""
 
 # 2) p-adic logs
 loga = padic_log_1px((a - 1) % p3, p, p3)

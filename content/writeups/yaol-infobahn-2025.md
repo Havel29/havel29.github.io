@@ -1,6 +1,16 @@
-##  Challenge Overview
+---
+title: "YAOL - Infobahn CTF 2025"
+date: 2025-11-09
+description: "Discrete logarithm challenge exploiting p^3 modulus structure using p-adic methods"
+tags: ["crypto", "discrete-log", "p-adic", "number-theory"]
+difficulty: "Easy"
+solves: 63
+ctf: "Infobahn CTF 2025"
+category: "Cryptography"
+draft: false
+---
 
-  
+##  Challenge Overview  
 
 **Challenge:** YAOL
 
